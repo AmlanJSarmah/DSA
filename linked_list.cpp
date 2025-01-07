@@ -17,13 +17,27 @@ void LinkedList::traverse() {
 void LinkedList::append(int value) {
 	Node* new_node = new Node();
 	new_node->data = value;
-	if (head == nullptr) {
+	if (length == 0) {
 		head = new_node;
 		tail = new_node;
 	}
 	else {
 		tail->next = new_node;
 		tail = new_node;
+	}
+	length++;
+}
+
+void LinkedList::prepend(int value) {
+	Node* new_node = new Node();
+	new_node->data = value;
+	if (length == 0) {
+		head = new_node;
+		tail = new_node;
+	}
+	else {
+		new_node->next = head;
+		head = new_node;
 	}
 	length++;
 }

@@ -14,4 +14,5 @@ public:
 	LinkedList();
 	void traverse();
 	void append(int value);
+	void prepend(int value);
 };
