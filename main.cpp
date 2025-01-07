@@ -9,15 +9,5 @@ int main() {
 	ll.insert_at(5, 50);
 	ll.insert_at(5, 40);
 	ll.traverse();
-	ll.delete_first();
-	ll.traverse();
-	ll.delete_last();
-	ll.traverse();
-	ll.delete_at(3);
-	ll.traverse();
-	ll.delete_at(1);
-	ll.traverse();
-	ll.delete_at(2);
-	ll.traverse();
 	return 0;
 }
