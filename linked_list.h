@@ -18,4 +18,7 @@ public:
 	void append(int value);
 	void prepend(int value);
 	void insert_at(int pos, int value);
+	int delete_first();
+	int delete_last();
+	int delete_at(int pos);
 };
