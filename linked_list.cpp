@@ -249,7 +249,7 @@ void LinkedList::reverse() {
 	// after to next element to head
 	Node* temp = head;
 	Node* before = nullptr;
-	Node* after = head->next;
+	Node* after = temp->next;
 	// While we have a value in temp i.e until temp is not nullptr
 	while (temp) {
 		// After points to the next element of temp 
