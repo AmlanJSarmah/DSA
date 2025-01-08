@@ -239,3 +239,32 @@ int LinkedList::delete_at(int pos) {
 	length--;
 	return 0;
 }
+
+void LinkedList::reverse() {
+	// Function to reverse a LL
+	if (length == 0 || length == 1) 
+		return;
+	// Initially Assign temp to head
+	// before to nullptr
+	// after to next element to head
+	Node* temp = head;
+	Node* before = nullptr;
+	Node* after = head->next;
+	// While we have a value in temp i.e until temp is not nullptr
+	while (temp) {
+		// After points to the next element of temp 
+		after = temp->next;
+		// Temp's next points to before element i.e. the direction of LL gets reversed
+		temp->next = before;
+		// Before points to temp
+		before = temp;
+		// And temp points to after
+		temp = after;
+	}
+	// Swap head and tail at end
+	temp = head;
+	head = tail;
+	tail = temp;
+	// P.S. it is important to have `after = temp->next` at beginning of the loop.
+	// If it is at the end of the loop then at last iteration, `after->next` try to access `nullptr->next` hence a memory error
+}

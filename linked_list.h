@@ -21,4 +21,5 @@ public:
 	int delete_first();
 	int delete_last();
 	int delete_at(int pos);
+	void reverse();
 };

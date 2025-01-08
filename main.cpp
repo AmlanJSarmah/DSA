@@ -9,5 +9,7 @@ int main() {
 	ll.insert_at(5, 50);
 	ll.insert_at(5, 40);
 	ll.traverse();
+	ll.reverse();
+	ll.traverse();
 	return 0;
 }
