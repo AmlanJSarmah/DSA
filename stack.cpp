@@ -7,6 +7,7 @@ Stack::Stack(): top{nullptr}, length {0}
 }
 
 void Stack::push(int value) {
+	//An operation to add an element at top of stack
 	SNode* new_node = new SNode;
 	new_node->data = value;
 	new_node->next = nullptr;
@@ -21,6 +22,7 @@ void Stack::push(int value) {
 }
 
 void Stack::pop() {
+	//An operation to remove an element from stack
 	if (length == 0) {
 		std::cout << "Error: Already Empty" << std::endl;
 		return;
