@@ -27,9 +27,15 @@
     <ClCompile Include="doubly_linked_list.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="stack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linked_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
