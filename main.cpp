@@ -1,14 +1,15 @@
 #include "linked_list.h"
+#include "doubly_linked_list.h"
 #include "stack.h"
 #include "queue.h"
 
 int main() {
-	Queue s;
-	s.enqueue(0);
-	s.enqueue(10);
-	s.enqueue(30);
-	s.traverse();
-	s.dequeue();
-	s.traverse();
+	Queue q;
+	q.enqueue(0);
+	q.enqueue(10);
+	q.enqueue(30);
+	q.traverse();
+	q.dequeue();
+	q.traverse();
 	return 0;
 }
