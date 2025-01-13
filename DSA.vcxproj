@@ -131,10 +131,12 @@
     <ClCompile Include="doubly_linked_list.h" />
     <ClCompile Include="linked_list.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="queue.cpp" />
     <ClCompile Include="stack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linked_list.h" />
+    <ClInclude Include="queue.h" />
     <ClInclude Include="stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
