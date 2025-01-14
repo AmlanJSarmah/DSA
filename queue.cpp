@@ -64,5 +64,4 @@ void Queue::traverse() {
 		temp = temp->next;
 	}
 	std::cout << "null\n";
-
 }
