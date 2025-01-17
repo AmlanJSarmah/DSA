@@ -33,6 +33,12 @@
     <ClCompile Include="queue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="circular_queue.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="circular_queue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linked_list.h">

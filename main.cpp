@@ -2,6 +2,7 @@
 #include "doubly_linked_list.h"
 #include "stack.h"
 #include "queue.h"
+#include "circular_queue.h"
 
 int main() {
 	return 0;
