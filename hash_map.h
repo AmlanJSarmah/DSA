@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 
 class HTNode{
 public:
@@ -17,4 +18,7 @@ public:
     HashMap();
     ~HashMap();
     void print_table();
+    bool set(std::string key, int value);
+    int get(std::string key);
+    std::vector<std::string> keys();
 };

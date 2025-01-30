@@ -3,7 +3,9 @@
 #include "stack.h"
 #include "queue.h"
 #include "circular_queue.h"
+#include "hash_map.h"
+#include <iostream>
 
 int main() {
-	return 0;
+    return 0;
 }
