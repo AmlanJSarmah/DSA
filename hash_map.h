@@ -21,4 +21,5 @@ public:
     bool set(std::string key, int value);
     int get(std::string key);
     std::vector<std::string> keys();
+    void remove_key(std::string key);
 };

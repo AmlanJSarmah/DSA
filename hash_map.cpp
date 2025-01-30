@@ -94,3 +94,31 @@ std::vector<std::string> HashMap::keys(){
     }
     return all_keys;
 }
+
+void HashMap::remove_key(std::string key){
+    int index = hash(key);
+    HTNode* temp = map[index];
+    HTNode* prev = nullptr;
+    while(temp){
+        if(temp->key == key){
+            // In case of multiple nodes
+            if(prev && temp->next){
+                prev->next = temp->next;
+                delete temp;
+            }
+            // In case of two node
+            else if(!prev && temp->next){
+                map[index] = temp->next;
+                delete temp;
+            }
+            // In case of one node
+            else{
+                map[index] = nullptr;
+                delete temp;
+            }
+            return;
+        }
+        prev = temp;
+        temp = temp->next;
+    }
+}
