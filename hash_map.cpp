@@ -1,6 +1,5 @@
 #include <climits>
 #include <iostream>
-#include <limits>
 #include "hash_map.h"
 
 HTNode::HTNode(std::string key, int value){
