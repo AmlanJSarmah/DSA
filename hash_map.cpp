@@ -94,30 +94,55 @@ std::vector<std::string> HashMap::keys(){
     return all_keys;
 }
 
-void HashMap::remove_key(std::string key){
+void HashMap::remove_by_key(std::string key){
     int index = hash(key);
     HTNode* temp = map[index];
-    HTNode* prev = nullptr;
+    int index_ll = 0;
+    bool is_found = false;
+    int length = 1;
+    // Determines the length of Linked List and the index of the element to be deleted
     while(temp){
         if(temp->key == key){
-            // In case of multiple nodes
-            if(prev && temp->next){
-                prev->next = temp->next;
-                delete temp;
-            }
-            // In case of two node
-            else if(!prev && temp->next){
-                map[index] = temp->next;
-                delete temp;
-            }
-            // In case of one node
-            else{
-                map[index] = nullptr;
-                delete temp;
-            }
-            return;
+            is_found = true;
         }
-        prev = temp;
+        if(!is_found)
+            index_ll++;
+        length++;
         temp = temp->next;
+    }
+    temp = map[index];
+    // To delete the required element
+    // To delete from start
+    if(index_ll == 0 && is_found == true){
+        if(length == 1){
+            map[index] = nullptr;
+            delete temp;
+        }
+        else{
+            map[index] = map[index]->next;
+            delete temp;
+        }
+    }
+    // To delete from end
+    else if(index_ll == length - 1 && is_found == true){
+        HTNode* prev = map[index];
+        for(int i = 0; i < length - 2; i++){
+            temp = temp->next;
+            prev = prev->next;
+        }
+        temp = temp->next;
+        prev->next = nullptr;
+        delete temp;
+    }
+    // To delete from between
+    else if(is_found == true){
+        HTNode* prev = map[index];
+        for(int i = 0; i < index - 1; i++){
+            temp = temp->next;
+            prev = prev->next;
+        }
+        temp = temp->next;
+        prev->next = temp->next;
+        delete temp;
     }
 }
