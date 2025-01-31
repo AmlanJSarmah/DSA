@@ -145,4 +145,7 @@ void HashMap::remove_by_key(std::string key){
         prev->next = temp->next;
         delete temp;
     }
+    else{
+        std::cout << "Error: Key Doesn't exist!" << std::endl;
+    }
 }
