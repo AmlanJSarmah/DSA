@@ -9,10 +9,20 @@ class BST_Node{
 };
 
 class BST{
+    BST_Node* root;
+    bool contains(BST_Node* cur, int value);
+    BST_Node* insert(BST_Node* cur, int value);
+    void inorder(BST_Node* cur);
+    void preorder(BST_Node* cur);
+    void postorder(BST_Node* cur);
     public:
-        BST_Node* root;
         BST();
         void destroy(BST_Node* cur_node);
         ~BST();
-        bool contains(BST_Node* cur, int value);
+        bool contains(int value);
+        void insert(int value);
+        void inorder();
+        void preorder();
+        void postorder();
+        void bfs();
 };
