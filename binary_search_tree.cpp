@@ -30,7 +30,7 @@ bool BST::contains(BST_Node* cur, int value){
         return false;
     if(cur->value == value)
         return true;
-    if(cur->value < value)
+    if(cur->value > value)
         return contains(cur->left, value);
     else
         return contains(cur->right, value);
@@ -123,4 +123,60 @@ void BST::bfs(){
             bst_queue.push(cur->right);
     }
     std::cout << "\n";
+}
+
+void BST::delete_node(int value){
+    if(root == nullptr){
+        std::cout << "Empty Tree" << std::endl;
+        return;
+    }
+    if(contains(value))
+        root = delete_node(root, value);
+}
+
+BST_Node* BST::delete_node(BST_Node* cur, int value){
+    //Finding the element to be deleted
+    if(cur == nullptr)
+        return cur;
+    //If element in left subtree
+    else if(cur->value < value) cur->right = delete_node(cur->right, value);
+    //If element in right subtree
+    else if(cur->value > value) cur->left = delete_node(cur->left, value);
+    //Element is found
+    else{
+        //No children
+        if(!cur->left && !cur->right){
+            BST_Node* temp = cur;
+            cur = nullptr;
+            delete temp;
+        }
+        //One children
+        else if(cur->left && !cur->right){
+            BST_Node* temp = cur;
+            cur = cur->left;
+            delete temp;
+        }
+        else if(!cur->left && cur->right){
+            BST_Node* temp = cur;
+            cur = cur->right;
+            delete temp;
+        }
+        //Two Children
+        else{
+            //Find leftmost element of right subree
+            BST_Node* temp = find_min(cur->right);
+            // Assign value of the node to value of leftmost root in right subtree
+            cur->value = temp->value;
+            // Deleting the leftmost root in right subtree
+            cur->right = delete_node(cur->right, temp->value);
+        }
+    }
+    return cur;
+}
+
+BST_Node* BST::find_min(BST_Node* cur){
+    if(!cur->left)
+        return cur;
+    find_min(cur->left);
+    return cur;
 }
