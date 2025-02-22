@@ -5,7 +5,8 @@
 #include "circular_queue.h"
 #include "hash_map.h"
 #include "binary_search_tree.h"
+#include "heap.h"
 
-int main() {
+int main(){
     return 0;
 }
