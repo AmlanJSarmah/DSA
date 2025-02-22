@@ -21,8 +21,8 @@ int Heap::parent(int index){
 
 void Heap::swap(int index1, int index2){
    int temp = heap.at(index1);
-   heap[index1] = heap.at(index2);
-   heap[index2] = temp;
+   heap.at(index1) = heap.at(index2);
+   heap.at(index2) = temp;
 }
 
 void Heap::traverse(){
@@ -70,7 +70,7 @@ int Heap::remove(){
     if(heap.size() == 1)
         heap.pop_back();
     else{
-        heap[0] = heap.back();
+        heap.at(0) = heap.back();
         heap.pop_back();
         sink_down(0);
     }
